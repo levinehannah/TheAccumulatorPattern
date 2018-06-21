@@ -115,8 +115,8 @@ def draw_squares_from_circle(n, circle, window):
     circle.attach_to(window)
     for k in range(n):
         r = circle.radius * k
-        center = rg.Point(circle.center.x + r,circle.center.y + r)
-        square = rg.Square(center, circle.radius * 2)
+        centerpoo = rg.Point(circle.center.x + r , circle.center.y + r)
+        square = rg.Square(centerpoo , circle.radius * 2)
         square.attach_to(window)
         window.render(0.5)
 
@@ -229,20 +229,20 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     rectangle. outline_thickness = 5
 
     for k in range(m):
-        cx = rectangle.get_lower_left_corner().x - k * rectangle.get_height()
-        cx = cx - rectangle.get_height() / 2
+        ccx = rectangle.get_lower_left_corner().x - k * rectangle.get_height()
+        ccx = ccx - rectangle.get_height() / 2
         cy = rectangle.get_lower_left_corner().y - rectangle.get_height() / 2
-        center = rg.Point(cx, cy)
-        circle = rg.Circle(center, rectangle.get_height() / 2)
+        ccenter = rg.Point(ccx, cy)
+        circle = rg.Circle(ccenter, rectangle.get_height() / 2)
         circle.fill_color = rectangle.fill_color
         circle.attach_to(window)
         window.render()
 
     for k in range(n):
-        cx = rectangle.get_upper_left_corner().x + rectangle.get_width() / 2
-        cy = rectangle.get_upper_left_corner().y - k * rectangle.get_width()
-        cy = cy - rectangle.get_width() / 2
-        center = rg.Point(cx, cy)
+        ccx = rectangle.get_upper_left_corner().x + rectangle.get_width() / 2
+        ccy = rectangle.get_upper_left_corner().y - k * rectangle.get_width()
+        ccy = ccy - rectangle.get_width() / 2
+        center = rg.Point(ccx, ccy)
         circle = rg.Circle(center, rectangle.get_width() / 2)
         circle.outline_color = rectangle.outline_color
         circle.attach_to(window)
@@ -340,16 +340,16 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     # ------------------------------------------------------------------
     rectangle1.attach_to(window)
     rectangle2.attach_to(window)
-    dx = abs(rectangle1.get_center().x - rectangle1.get_lower_left_corner().x)
-    dy = abs(rectangle1.get_center().y - rectangle1.get_lower_left_corner().y)
+    ddx = abs(rectangle1.get_center().x - rectangle1.get_lower_left_corner().x)
+    ddy = abs(rectangle1.get_center().y - rectangle1.get_lower_left_corner().y)
     for k in range(n):
-        p1 = rectangle1.get_center()
-        p2 = rectangle2.get_center()
-        p1.x = p1.x - dx * k
-        p1.y = p1.y + dy * k
-        p2.x = p2.x - dx * k
-        p2.y = p2.y + dy * k
-        lone = rg.Line(p1, p2)
+        pp1 = rectangle1.get_center()
+        pp2 = rectangle2.get_center()
+        pp1.x = pp1.x - ddx * k
+        pp1.y = pp1.y + ddy * k
+        pp2.x = pp2.x - ddx * k
+        pp2.y = pp2.y + ddy * k
+        lone = rg.Line(pp1, pp2)
         lone.thickness = 5
         if k % 2 == 0:
             lone.color = rectangle1.outline_color
