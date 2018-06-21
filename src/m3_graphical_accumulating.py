@@ -111,11 +111,11 @@ def draw_parallel_lines(n, point, length, window):
     # ------------------------------------------------------------------
 
     for k in range(n):
-        p1 = point
-        p1.y = p1.y + 30
-        p2 = p1.clone()
-        p2.x = p2.x + length
-        lone = rg.Line(p1, p2)
+        point1 = point
+        point1.y = point1.y + 30
+        point2 = point1.clone()
+        point2.x = point2.x + length
+        lone = rg.Line(point1, point2)
         lone.attach_to(window)
 
     window.render()
@@ -185,11 +185,11 @@ def draw_lines(n, point, window):
     # ------------------------------------------------------------------
 
     for k in range(n):
-        p1 = point
-        p2 = p1.clone()
-        p2.x = p2.x + 100
-        p2.y = p2.y - 100 + 200 * k / (n-1)
-        lone = rg.Line(p1, p2)
+        point1 = point
+        point2 = point1.clone()
+        point2.x = point2.x + 100
+        point2.y = point2.y - 100 + 200 * k / (n-1)
+        lone = rg.Line(point1, point2)
         lone.attach_to(window)
 
     window.render(0.5)
