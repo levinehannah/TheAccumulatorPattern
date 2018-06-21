@@ -73,8 +73,8 @@ def run_test_sum_more_cosines():
     print('       actual:  ', answer)
 
     # Test 3:
-    expected = 1.5403
-    answer = sum_more_cosines(0,1)
+    expected = 1.124155
+    answer = sum_more_cosines(0,2)
     print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
@@ -105,9 +105,10 @@ def sum_more_cosines(m, n):
     #   Just   range(blah)   where blah is a single variable.
     #   Reason: To ensure that you get more practice using variables.
     # ------------------------------------------------------------------
-    total=0
-    for k in range(n+1):
-        total = total + math.cos(k)
+
+    total = 0
+    for k in range(n - m +1):
+        total = total + math.cos(m + k)
     return total
 
 
@@ -144,8 +145,8 @@ def run_test_count_sines_from():
     print('       actual:  ', answer)
 
     # Test 3:
-    expected = 0
-    answer = count_sines_from(7, 7)
+    expected = 2
+    answer = count_sines_from(3, 4)
     print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
@@ -251,8 +252,8 @@ def run_test_count_sines_vs_cosines():
     print('       actual:  ', answer)
 
     # Test 6:
-    expected = 100
-    answer = count_sines_vs_cosines(101)
+    expected = 5
+    answer = count_sines_vs_cosines(4)
     print('Test 6 expected:', expected)
     print('       actual:  ', answer)
 
