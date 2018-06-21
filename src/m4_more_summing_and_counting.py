@@ -206,7 +206,7 @@ def factorial(n):
         if (n==0):
             total = 1
         else:
-            total *= (k+1)
+            total = total * (k+1)
     return total
 
 def run_test_count_cosines_from():
@@ -310,7 +310,7 @@ def count_cosines_from(m, n, x):
     count = 0
     for k in range(n-m+1):
         if(math.cos(m+k)>x):
-            count += 1
+            count = count + 1
     return count
 
 
@@ -374,7 +374,7 @@ def sum_unit_fractions_from(m, n):
     total = 0
     for k in range(n-m+1):
         if (m != 0 and n != 0):
-            total += 1 / (m+k)
+            total = total + 1 / (m+k)
         else:
             return 'DNE'
     return total
